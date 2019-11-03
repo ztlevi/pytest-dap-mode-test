@@ -1,75 +1,43 @@
-[![Build Status](https://travis-ci.org/cdiener/pytest_tutorial.svg?branch=complete)](https://travis-ci.org/cdiener/pytest_tutorial)
-[![Code Coverage](https://codecov.io/gh/cdiener/pytest_tutorial/branch/complete/graph/badge.svg)](https://codecov.io/gh/cdiener/pytest_tutorial)
+# Dap mode pytest test project
 
-The talk presented at PythonDay 2017 can be found interactively at
-https://pythondaymx.github.io/taller_testing or as PDF in [talk.pdf](talk.pdf).
+Make sure you have pytest installed. Python3 is used in this project, so you can install pytest via `python3 -m pip install pytest`
 
-No te asustes que la presentación es en inglés. La plática es en español 😅.
+## Emacs config
 
-# Example project for pytest tutorial
+Emacs's config is under `{root}/config.el`.
 
-This example project implements a small app named "networker" that can draw
-force layouts for a directory of JSON graphs.
+You might need to set `dap-python-executable to python3`
 
-## Installation
+## Reproduce
 
-### Requirements
+### python run
 
-**Software**:
+- In emacs
 
-- Python >=2.7.11 or >3.3
-- pip >= 8.1
-- a recent web browser
-- Optional: git, virtualenv
+  1. toggle dap breakpoint on `main.py` line 4.
+  2. dap-debug -> My app
 
-**Abilities that will help you**:
+  Working but the compilation buffer (server log) will disappear.
 
-- know how to use your Terminal (changing directories, executing scripts)
-- basic Python (functions, imports, decorators)
+- In vscode
 
-### Optional: set up a virtual environment
+  1. toggle breakpoint on `main.py` line 4.
+  2. Select `python main` in the debug panel and run.
 
-**For Python 2**:
+  Working.
 
-```bash
-pip install virtualenv
-cd <tutorial folder>
-pyvenv env
-source env/bin/activate
-```
+### pytest run
 
-**For Python 3**:
+- In emacs
 
-```bash
-cd <tutorial folder>
-python3 -m venv env
-source env/bin/activate
-```
+  1. toggle dap breakpoint on `test/test_app.py` line 7
+  2. dap-debug -> My app
 
-### Install pytest and the package in developer mode
+  Not working
 
-Run the following in the tutorial folder.
+- In vscode
 
-```bash
-# May be pip3 on your system
-pip install --user pytest pytest-cov
-pip install --user -e .
-```
+  1. toggle breakpoint on `test/test_app.py` line 7
+  2. Select `pytest test_app` in the debug panel and run.
 
-## Try the app
-
-Run the app in the tutorial folder with
-
-```bash
-# may be python3 on your system
-python -m networker
-```
-
-Open your browser at https://localhost:5000/miserables and check whether you
-see the graph.
-
-In total the app has the following routes:
-
-- `/<filename>` - create the graph for the file `<filename>` (you can omit the extension)
-- `/json/<filename>` - get the JSON from a file `<filename>`
-- `/validate/<filename>` - check whether `<filename>` contains a valid JSON graph
+  Working

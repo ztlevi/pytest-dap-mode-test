@@ -8,6 +8,7 @@
  "My App test"
  (list :type "python"
        :request "launch"
+       :cwd "~/Developer/Github/pytest-dap-mode-test"
        :args "-m pytest -sv"
        :target-module "tests/test_app.py"
        :name "My App test"))
@@ -17,7 +18,7 @@
  "My App"
  (list :type "python"
        :args ""
-       :cwd nil
+       :cwd "~/Developer/Github/pytest-dap-mode-test"
        ;; :env '(("DEBUG" . "1"))
        :target-module "main.py"
        :request "launch"

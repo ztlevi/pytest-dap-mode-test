@@ -12,33 +12,21 @@
       "console": "integratedTerminal"
     },
     {
-      "name": "PyTest test_app",
+      "name": "Python main",
+      "type": "python",
+      "request": "launch",
+      "args": ["-sv"],
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Pytest test_app",
       "type": "python",
       "request": "launch",
       "module": "pytest",
       "args": ["-sv"],
       "program": "${workspaceFolder}/tests/test_app.py",
       "console": "integratedTerminal"
-    },
-    {
-      "name": "Django: Test",
-      "type": "python",
-      "request": "launch",
-      "program": "${workspaceFolder}/setup.py",
-      "env": { "DJANGO_SETTINGS_MODULE": "myproject.settings.test" },
-      "args": ["test"],
-      "django": true,
-      "console": "integratedTerminal"
-    },
-    {
-      "name": "Python test_app 2",
-      "type": "python",
-      "request": "launch",
-      "module": "pytest",
-      "args": [],
-      // "pythonPath": "${config:python.pythonPath}",
-      "program": "${workspaceFolder}/tests/test_app.py"
-      // "console": "integratedTerminal"
     }
   ]
 }
