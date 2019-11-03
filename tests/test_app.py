@@ -1,8 +1,10 @@
 """Unit tests for networker."""
 
+import pdb
+
 import pytest
-from networker.app import app
-from networker.app import validate
+
+# from networker.app import app, validate
 
 
 def test_validate_good():
@@ -27,6 +29,12 @@ def test_get_json():
 
 def test_get_validation():
     """Check whether validation returns plain text describing the state."""
+    for i in range(110):
+        a = 1
+
+    for j in range(10):
+        b = 1
+
     assert True
 
 
