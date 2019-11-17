@@ -9,18 +9,18 @@
  (list :type "python"
        :request "launch"
        :cwd "~/Developer/Github/pytest-dap-mode-test"
-       :args "-m pytest -sv"
-       :target-module "tests/test_app.py"
+       :args "-sv"
+       :program "tests/test_app.py"
+       :module "pytest"
        :name "My App test"))
-
 
 (dap-register-debug-template
  "My App"
  (list :type "python"
        :args ""
        :cwd "~/Developer/Github/pytest-dap-mode-test"
-       ;; :env '(("DEBUG" . "1"))
-       :target-module "main.py"
+       :env '(("DEBUG" . "1"))
+       :program "main.py"
        :request "launch"
        :name "My App"))
 
